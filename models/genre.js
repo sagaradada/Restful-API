@@ -21,3 +21,7 @@ module.exports.getGenres = function (callback, limit) {
   Genre.find(callback).limit(limit);
 };
 
+//Fucntion to get genres by id
+module.exports.getGenreById = function (id, callback) {
+  Genre.findById(id, callback);
+};

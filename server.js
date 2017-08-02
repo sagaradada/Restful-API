@@ -75,6 +75,17 @@ app.get('/api/books/:_id', function (req, res) {
   })
 });
 
+//adding routes for genres to get with the id
+app.get('/api/genres/:_id', function (req, res) {
+  Genre.getGenreById (req.params._id, function (err, genre) {
+    if(err) {
+      console.log(err);
+    }
+    console.log("Fetching data from Bookstore database and Genres collection with given id");
+    res.json(genre);
+    console.log("Successfully fetch data with given id");
+  })
+});
 
 //To ask express to listen
 app.listen(port, function () {
